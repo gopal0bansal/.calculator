@@ -1,47 +1,35 @@
 #include <stdio.h>
-# Minimal Calculator (C)
 
-This repository contains a minimal interactive calculator implemented in `calculator.c`.
+int main() {
+    # Minimal Calculator (C)
 
-Build
+    This repository contains a minimal interactive calculator implemented in `calculator.c`.
 
-```sh
-make build
-```
+    Build
 
-Run
+    ```sh
+    make build
+    ```
 
-```sh
-make run
-# or
-./calculator
-```
+    Run
 
-Supported operators:
-- Binary: `+`, `-`, `*`, `/`, `%` (modulus via `fmod`), `^` (power via `pow`).
-- Unary: `sqrt` (or `s`) and `fact`/`factorial` (or `!`).
+    ```sh
+    make run
+    # or
+    ./calculator
+    ```
 
-CLI mode
+    Supported operators: `+`, `-`, `*`, `/`, `%` (modulus via `fmod`), `^` (power via `pow`).
 
-You can run the program non-interactively:
+    Testing
 
-```sh
-# binary operator: op num1 num2
-./calculator ^ 2 3
-# unary operator: op num1
-./calculator sqrt 9
-./calculator fact 5
-```
+    Run the provided tests:
 
-Testing
+    ```sh
+    make test
+    ```
 
-Run the provided tests:
+    Notes
 
-```sh
-make test
-```
-
-Notes
-
-- The program reads an operator (symbol or spelled name) then one or two numbers depending on operator. It prints results with two decimal places.
-- Avoid editing both `README.md` and `calculator.c` simultaneously unless you intend to update docs.
+    - The program reads an operator (single char) then two numbers. It prints results with two decimal places.
+    - Avoid editing both `README.md` and `calculator.c` simultaneously unless you intend to update docs.

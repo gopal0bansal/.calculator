@@ -26,25 +26,6 @@ run_case / 5 2 "= 2.50" "division"
 run_case % 5 2 "= 1.00" "modulus"
 run_case ^ 2 3 "= 8.00" "power"
 
-# CLI mode tests for spelled/unary operators
-cli_out=$(./calculator sqrt 9 2>&1) || true
-if echo "$cli_out" | grep -F "sqrt(9.00) = 3.00" >/dev/null; then
-  echo "ok - CLI sqrt"
-else
-  echo "FAIL - CLI sqrt"
-  echo "  got: $cli_out"
-  failures=$((failures+1))
-fi
-
-cli_out=$(./calculator fact 5 2>&1) || true
-if echo "$cli_out" | grep -F "5! = 120.00" >/dev/null; then
-  echo "ok - CLI factorial"
-else
-  echo "FAIL - CLI factorial"
-  echo "  got: $cli_out"
-  failures=$((failures+1))
-fi
-
 # division by zero
 out=$(printf "/\n5 0\n" | ./calculator 2>&1) || true
 if echo "$out" | grep -F "Error! Division by zero." >/dev/null; then
