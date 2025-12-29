@@ -1,35 +1,58 @@
-#include <stdio.h>
+# Minimal Calculator
 
-int main() {
-    # Minimal Calculator (C)
+A simple interactive calculator implemented in C, with a web interface option.
 
-    This repository contains a minimal interactive calculator implemented in `calculator.c`.
+## Features
 
-    Build
+- Supports basic arithmetic operations: `+`, `-`, `*`, `/`, `%` (modulus), `^` (power)
+- Interactive command-line interface
+- Web interface available in the `web/` directory
 
-    ```sh
-    make build
-    ```
+## Build and Run
 
-    Run
+### Command Line Version
 
-    ```sh
-    make run
-    # or
-    ./calculator
-    ```
+```bash
+# Build
+make build
+# or manually
+gcc -std=c11 -O2 -Wall calculator.c -o calculator -lm
 
-    Supported operators: `+`, `-`, `*`, `/`, `%` (modulus via `fmod`), `^` (power via `pow`).
+# Run
+make run
+# or
+./calculator
+```
 
-    Testing
+### Web Version
 
-    Run the provided tests:
+The `web/` directory contains a Flask-based web calculator.
 
-    ```sh
-    make test
-    ```
+```bash
+cd web
+pip install -r requirements.txt
+python app.py
+```
 
-    Notes
+## Testing
 
-    - The program reads an operator (single char) then two numbers. It prints results with two decimal places.
-    - Avoid editing both `README.md` and `calculator.c` simultaneously unless you intend to update docs.
+Run the test suite:
+
+```bash
+make test
+```
+
+## Usage
+
+For the CLI version:
+- Enter an operator (+, -, *, /, %, ^)
+- Enter two numbers
+- Result is displayed with two decimal places
+
+## Contributing
+
+Feel free to open issues or pull requests.
+
+## License
+
+This project is open source. See LICENSE for details.
